@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>An experimental study for software quality prediction with ML</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="static/assets/img/favicon.png" rel="icon">
+    <!--  <link href="static/assets/img/apple-touch-icon.png" rel="apple-touch-icon">-->
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="static/assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+    <link href="static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="static/assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+    <link href="static/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="static/assets/vendor/venobox/venobox.css" rel="stylesheet">
+    <link href="static/assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="static/assets/css/style.css" rel="stylesheet">
+
+    <!-- =======================================================
+    * Template Name: Sailor - v2.3.1
+    * Template URL: https://bootstrapmade.com/sailor-free-bootstrap-theme/
+    * Author: BootstrapMade.com
+    * License: https://bootstrapmade.com/license/
+    ======================================================== -->
+</head>
+
+<body>
+
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top ">
+    <div class="container d-flex align-items-center">
+
+        <h1 class="logo"><a> CERVICAL CANCER PREDICTION </a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <a href="index.html" class="logo"><img src="static/assets/img/logo.png" alt="" class="img-fluid"></a>
+
+        <nav class="nav-menu d-none d-lg-block">
+
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/load data">Load Data</a></li>
+                <li><a href="/view data">View Data</a></li>
+                <li><a href="/model">Select Model</a></li>
+                <li class="active"><a href="/graph">Graph</a></li>
+                <li class="active"><a href="/prediction">Prediction</a></li>
+                
+
+
+
+            </ul>
+
+        </nav><!-- .nav-menu -->
+
+
+    </div>
+</header><!-- End Header -->
+
+<section id="hero">
+    <div id="heroCarousel" class="carousel slide carousel-fade" data-ride="carousel">
+
+        <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+
+        <!--      <div class="carousel-inner" role="listbox">-->
+        <div class="carousel-item active" style="background-image: url(static/assets/img/c5.jpg)">
+            <div class="carousel-container">
+                <div class="container">
+                    {%block body %}
+                    {% if result == [0] %}
+
+                    <h3 style="color:white;background:green;margin-top: 100px;"><i>The Software is safe"</i></h3>
+                    {% elif result == [1] %}
+                    <h3 style="color:white;background:green;margin-top: 100px;"><i>The Software is unsafe"</i></h3>
+
+                    {% endif %}
+                    {% endblock %}
+                    <center><h1 style="color:red;padding-top: 64px;">{{msg}}</h1></center>
+                   <center> <h3 style="color:white">Prediction</h3></center><br><br>
+
+                    <!--             <center>   <h3 style="color:white;background-color:black;position:absolute;bottom :800px;margin-left: 180px;">An experimental study for software quality prediction with ML</h3></center><br>-->
+                    <form action="{{url_for('prediction')}}" method="post">
+                        <table>
+                            <tr>
+                                <td>
+                                    <label style="color:white;">age1</label>
+                                    <input type="number"name="a"placeholder="age1"><br><br></td>
+                                <td>
+                                    <label style="color:white;">Partners</label>
+                                    <input type="number"name="b"placeholder="Partners"><br><br></td>
+                                <td>
+                                    <label style="color:white;">Intercourse</label>
+                                    <input type="number"name="c"placeholder="Intercourse"><br><br></td>
+                                <td>
+                                    <label style="color:white;">pregnancies</label>
+                                    <input type="number"name="d"placeholder="pregnancies"><br><br></td>
+                                <td>
+                                    <label style="color:white;">Smokes</label>
+                                    <input type="number"name="e" placeholder="Smokes" ><br><br></td>
+                                <td>
+                                    <label style="color:white;">Smokes_year</label>
+                                    <input type="number"name="f"placeholder="Smokes_year"><br><br></td>
+
+                            </tr></table>
+                        <table>
+                            <tr>
+                                <td>
+                                    <label style="color:white;">&nbsp;&nbsp;&nbsp;&nbsp;Hormonal</label>
+                                    <input type="number"name="g"  placeholder="Hormonal"><br><br></td>
+                                <td>
+                                    <label style="color:white;">herpes</label>
+                                    <input type="number"name="h"placeholder="herpes"><br><br></td>
+                                <td>
+                                    <label style="color:white;">diagnosis</label>
+                                    <input type="number"name="i"placeholder="diagnosis"><br><br></td>
+                                <td>
+                                    <label style="color:white;">Dx_CINe</label>
+                                    <input type="number"name="j"placeholder="Dx_CINe"><br><br></td>
+                                <td>
+                                    <label style="color:white;">Schiller</label>
+                                    <input type="number"name="k"placeholder="Schiller"><br><br></td>
+                                <td>
+                                    <label style="color:white;">Citology</label>
+                                    <input type="number"name="l"placeholder="Citology"><br><br></td>
+                            </tr></table>
+
+                        <input type="submit" value="predict"class="btn btn-info">
+
+
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+        <!--      </div>-->
+    </div>
+</section>
+
+
+
+
+
+
+<script src="static/assets/vendor/jquery/jquery.min.js"></script>
+<script src="static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="static/assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+<script src="static/assets/vendor/php-email-form/validate.js"></script>
+<script src="static/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+<script src="static/assets/vendor/venobox/venobox.min.js"></script>
+<script src="static/assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+<script src="static/assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+
+<!-- Template Main JS File -->
+<script src="static/assets/js/main.js"></script>
+
+</body>
+
+</html>
+
+<!--0= 1.0,1.000000,0.0,0.0,0.0,1.000000,1.000000,0.0,0.00000,1.0000-->
+<!--1=0.000000,1.000000,0.000000,0.000000,0.0,0.000000,0.0,0.0,0.000000,0.000000-->
